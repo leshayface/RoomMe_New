@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RoomMe</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  		<% if user_signed_in? %>
+		<li><%= link_to "New Room", new_room_path %></li>
+		<li><%= link_to "Account", edit_user_registration_path %></li>
+		<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+	<% else %>
+	  	<li><%= link_to "Sign Up", new_user_registration_path %></li>
+	    <li><%= link_to "Sign In", new_user_session_path %></li>
+	<% end %>
+    <%= yield %>
+  </body>
+</html>
