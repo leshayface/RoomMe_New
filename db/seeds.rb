@@ -15,7 +15,7 @@
 #   Location.create(city: rc, room_id: room_two.id)
 # end
 
-HouseRule.create( name: 'Families & children accepted' )
-HouseRule.create( name: 'Couples accepted' )
-HouseRule.create( name: 'Pets allowed' )
-HouseRule.create( name: 'Smoking inside the property allowed' )
+# HouseRule.create( name: 'Families & children accepted' )
+# HouseRule.create( name: 'Couples accepted' )
+# HouseRule.create( name: 'Pets allowed' )
+# HouseRule.create( name: 'Smoking inside the property allowed' )

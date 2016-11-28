@@ -1,0 +1,1 @@
+json.array! @about_properties, partial: 'about_properties/about_property', as: :about_property

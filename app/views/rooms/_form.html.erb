@@ -33,6 +33,56 @@
     <%= house_rule.name %><br />
   <% end %>
 
+  <%= f.fields_for :about_property do |v| %>
+    <div class="field">
+        <%= v.label :property_type %>
+        <%= v.text_area :property_type %>
+    </div>
+    <div class="field">
+        <%= v.label :numb_rooms %>
+        <%= v.text_area :numb_rooms %>
+    </div>
+    <div class="field">
+        <%= v.label :numb_bathrooms %>
+        <%= v.text_area :numb_bathrooms %>
+    </div>
+    <div class="field">
+        <%= v.label :rooms_avail %>
+        <%= v.text_area :rooms_avail %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :about_room do |l| %>
+    <div class="field">
+        <%= l.label :monthly_rent %>
+        <%= l.text_area :monthly_rent %>
+    </div>
+    <div class="field">
+        <%= l.label :add_utility_cost %>
+        <%= l.check_box :add_utility_cost %>
+    </div>
+    <div class="field">
+        <%= l.label :room_type %>
+        <%= l.text_area :room_type %>
+    </div>
+    <div class="field">
+        <%= l.label :furnished %>
+        <%= l.text_area :furnished %>
+    </div>
+    <div class="field">
+        <%= l.label :ensuite %>
+        <%= l.check_box :ensuite %>
+    </div>
+    <div class="field">
+        <%= l.label :avail_from %>
+        <%= l.text_area :avail_from %>
+    </div>
+    <div class="field">
+        <%= l.label :min_stay %>
+        <%= l.text_area :min_stay %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

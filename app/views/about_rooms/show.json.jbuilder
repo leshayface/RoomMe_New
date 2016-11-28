@@ -1,0 +1,1 @@
+json.partial! "about_rooms/about_room", about_room: @about_room

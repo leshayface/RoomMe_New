@@ -15,17 +15,81 @@
   <%= @room.location.city %>
 </p>
 
+<strong>House Rules:</strong>
+  <% @room.house_rules.each do |n| %>
+    <br /><%= n.name %>
+  <% end %>
+</p>
+
+<!-- ABOUT PROPERTY -->
+<p>
+  <strong>About Property:</strong>
+  <strong>Property Type</strong>
+  <%= @room.about_property.property_type %>
+</p>
+
+<p>
+  <strong>Number of Rooms</strong>
+  <%= @room.about_property.numb_rooms %>
+</p>
+
+<p>
+  <strong>Number of Bathrooms</strong>
+  <%= @room.about_property.numb_bathrooms %>
+</p>
+
+<p>
+  <strong>Number of Rooms Available</strong>
+  <%= @room.about_property.rooms_avail %>
+</p>
+
 <p>
 	<strong>Submitted by:</strong>
   <%= @room.user.email %>
 </p>
 
+<!-- ABOUT ROOM -->
+
 <p>
-<strong>House Rules:</strong>
-  <% @room.house_rules.each do |n| %>
-  	<br /><%= n.name %>
-  <% end %>
+  <strong>About Room:</strong>
+  <strong>monthly_rent</strong>
+  <%= @room.about_room.monthly_rent %>
 </p>
+
+<p>
+  <strong>add_utility_cost</strong>
+  <%= @room.about_room.add_utility_cost %>
+</p>
+
+<p>
+  <strong>room_type</strong>
+  <%= @room.about_room.room_type %>
+</p>
+
+<p>
+  <strong>furnished</strong>
+  <%= @room.about_room.furnished %>
+</p>
+
+<p>
+  <strong>ensuite</strong>
+  <%= @room.about_room.ensuite %>
+</p>
+<p>
+  <strong>avail_from</strong>
+  <%= @room.about_room.avail_from %>
+</p>
+<p>
+  <strong>min_stay</strong>
+  <%= @room.about_room.min_stay %>
+</p>
+
+<p>
+  <strong>Submitted by:</strong>
+  <%= @room.user.email %>
+</p>
+
+<p>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

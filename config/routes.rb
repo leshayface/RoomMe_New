@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :about_rooms
+  resources :about_properties
   devise_for :users
   resources :locations
   resources :rooms

@@ -1,0 +1,1 @@
+json.array! @about_rooms, partial: 'about_rooms/about_room', as: :about_room
