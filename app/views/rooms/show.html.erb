@@ -23,7 +23,7 @@
 
 <!-- ABOUT PROPERTY -->
 <p>
-  <strong>About Property:</strong>
+  <strong>ABOUT PROPERTY</strong><br/><br/>
   <strong>Property Type</strong>
   <%= @room.about_property.property_type %>
 </p>
@@ -51,7 +51,7 @@
 <!-- ABOUT ROOM -->
 
 <p>
-  <strong>About Room:</strong>
+  <strong>ABOUT ROOM</strong><br/><br/>
   <strong>monthly_rent</strong>
   <%= @room.about_room.monthly_rent %>
 </p>
@@ -82,6 +82,34 @@
 <p>
   <strong>min_stay</strong>
   <%= @room.about_room.min_stay %>
+</p>
+
+<!-- HOUSEMATE -->
+
+<p>
+  <strong>HOUSEMATE:</strong><br/><br/>
+  <strong>numb_current_mates</strong>
+  <%= @room.housemate.numb_current_mates %>
+</p>
+
+<p>
+  <strong>pref_gender</strong>
+  <%= @room.housemate.pref_gender %>
+</p>
+
+<p>
+  <strong>pref_occupation</strong>
+  <%= @room.housemate.pref_occupation %>
+</p>
+
+<p>
+  <strong>Preferred age min</strong>
+  <%= @room.housemate.pref_age_min %>
+</p>
+
+<p>
+  <strong>pref age max</strong>
+  <%= @room.housemate.pref_age_max %>
 </p>
 
 <p>

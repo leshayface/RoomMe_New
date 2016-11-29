@@ -1,0 +1,1 @@
+json.array! @housemates, partial: 'housemates/housemate', as: :housemate

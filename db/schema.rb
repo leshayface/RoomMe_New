@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128131921) do
+ActiveRecord::Schema.define(version: 20161128141845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20161128131921) do
     t.integer "house_rule_id", null: false
     t.integer "room_id",       null: false
     t.index ["house_rule_id", "room_id"], name: "index_house_rules_rooms_on_house_rule_id_and_room_id", using: :btree
+  end
+
+  create_table "housemates", force: :cascade do |t|
+    t.integer  "room_id"
+    t.integer  "numb_current_mates"
+    t.integer  "pref_gender"
+    t.integer  "pref_occupation"
+    t.integer  "pref_age_min"
+    t.integer  "pref_age_max"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "locations", force: :cascade do |t|

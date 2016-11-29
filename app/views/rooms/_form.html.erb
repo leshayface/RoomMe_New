@@ -83,6 +83,29 @@
     </div>
   <% end %>
 
+  <%= f.fields_for :housemate do |n| %>
+    <div class="field">
+        <%= n.label :numb_current_mates %>
+        <%= n.text_area :numb_current_mates %>
+    </div>
+    <div class="field">
+        <%= n.label :pref_gender %>
+        <%= n.text_area :pref_gender %>
+    </div>
+    <div class="field">
+        <%= n.label :pref_occupation %>
+        <%= n.text_area :pref_occupation %>
+    </div>
+    <div class="field">
+        <%= n.label :pref_age_min %>
+        <%= n.text_area :pref_age_min %>
+    </div>
+    <div class="field">
+        <%= n.label :pref_age_max %>
+        <%= n.text_area :pref_age_max %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

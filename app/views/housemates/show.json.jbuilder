@@ -1,0 +1,1 @@
+json.partial! "housemates/housemate", housemate: @housemate
