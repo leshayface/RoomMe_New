@@ -19,10 +19,14 @@ class RoomsController < ApplicationController
     @room.build_about_property
     @room.build_about_room
     @room.build_housemate
+    @room.house_rules.build
+    @room.room_amenities.build
+    @room.room_images.build
   end
 
   # GET /rooms/1/edit
   def edit
+    # 3.times { @trip.trip_images.build }
   end
 
   # POST /rooms
@@ -74,6 +78,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:title, :description, location_attributes: [ :id, :city ], house_rule_ids: [], about_property_attributes: [:id, :property_type, :numb_rooms, :numb_bathrooms, :rooms_avail ], about_room_attributes: [:id, :monthly_rent, :add_utility_cost, :room_type, :furnished, :ensuite, :avail_from, :min_stay ], housemate_attributes: [:id, :numb_current_mates, :pref_gender, :pref_occupation, :pref_age_min, :pref_age_max] )
+      params.require(:room).permit(:title, :description, location_attributes: [ :id, :city ], house_rule_ids: [], room_amenity_ids: [], about_property_attributes: [:id, :property_type, :numb_rooms, :numb_bathrooms, :rooms_avail ], about_room_attributes: [:id, :monthly_rent, :add_utility_cost, :room_type, :furnished, :ensuite, :avail_from, :min_stay ], housemate_attributes: [:id, :numb_current_mates, :pref_gender, :pref_occupation, :pref_age_min, :pref_age_max], room_images: [:id, :caption, :photo] )
     end
 end

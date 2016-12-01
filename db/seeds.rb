@@ -19,3 +19,11 @@
 # HouseRule.create( name: 'Couples accepted' )
 # HouseRule.create( name: 'Pets allowed' )
 # HouseRule.create( name: 'Smoking inside the property allowed' )
+
+RoomAmenity.create( name: 'TV' )
+RoomAmenity.create( name: 'Wifi' )
+RoomAmenity.create( name: 'Parking' )
+RoomAmenity.create( name: 'Garden' )
+RoomAmenity.create( name: 'Terrace/ Balcony' )
+RoomAmenity.create( name: 'Security' )
+RoomAmenity.create( name: 'Elevator' )

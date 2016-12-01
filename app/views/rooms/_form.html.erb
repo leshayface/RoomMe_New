@@ -1,4 +1,7 @@
-<%= form_for(room) do |f| %>
+<div class="container">
+<div class="row">
+<div class="col-sm-8">
+<%= form_for(room, :html => {:multipart => true}) do |f| %>
   <% if room.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -11,102 +14,135 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => 'form-control' %>
   </div>
 
   <%= f.fields_for :location do |d| %>
-    <div class="field">
+    <div class="form-group">
         <%= d.label :city %>
-        <%= d.text_area :city %>
+        <%= d.text_field :city, :class => 'form-control' %>
     </div>
   <% end %>
-
+  <h3>House Rules</h3>
   <% HouseRule.all.each do |house_rule| %>
-    <%= check_box_tag "room[house_rule_ids][]", house_rule.id %>
-    <%= house_rule.name %><br />
+    <div class="checkbox-inline">
+      <%= check_box_tag "room[house_rule_ids][]", house_rule.id %>
+      <%= house_rule.name %><br />
+    </div>
   <% end %>
-
+  <h3>Room Amenities</h3>
+  <% RoomAmenity.all.each do |room_amenity| %>
+    <div class="checkbox-inline">
+      <%= check_box_tag "room[room_amenity_ids][]", room_amenity.id %>
+      <%= room_amenity.name %><br />
+    </div>
+  <% end %>
+  <h3>About Property</h3>
   <%= f.fields_for :about_property do |v| %>
-    <div class="field">
-        <%= v.label :property_type %>
-        <%= v.text_area :property_type %>
+    <div class="form-group">
+        <%= v.collection_radio_buttons(:property_type, AboutProperty.property_types, :first, :first)%>
     </div>
-    <div class="field">
-        <%= v.label :numb_rooms %>
-        <%= v.text_area :numb_rooms %>
+
+    <h5>Number of Rooms</h5>
+    <% 1.upto(10) do |i| %>
+      <%= v.label :numb_rooms, i %>
+      <%= v.radio_button :numb_rooms, i %>&nbsp;&nbsp;
+    <% end %> 
+
+    <h5>Number of Bathrooms</h5>
+    <div class="form-group">
+    <% 1.upto(10) do |i| %>
+      <%= v.label :numb_bathrooms, i %>
+      <%= v.radio_button :numb_bathrooms, i %>&nbsp;&nbsp;
+    <% end %>
     </div>
-    <div class="field">
-        <%= v.label :numb_bathrooms %>
-        <%= v.text_area :numb_bathrooms %>
-    </div>
-    <div class="field">
-        <%= v.label :rooms_avail %>
-        <%= v.text_area :rooms_avail %>
+
+    <h5>Rooms Available</h5>
+    <div class="form-group">
+      <% 1.upto(10) do |i| %>
+        <%= v.label :rooms_avail, i %>
+        <%= v.radio_button :rooms_avail, i %>&nbsp;&nbsp;
+      <% end %>
     </div>
   <% end %>
-
+  <h3>About Room</h3>
   <%= f.fields_for :about_room do |l| %>
-    <div class="field">
+    <div class="form-group">
         <%= l.label :monthly_rent %>
-        <%= l.text_area :monthly_rent %>
+        <%= l.text_field :monthly_rent %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= l.label :add_utility_cost %>
         <%= l.check_box :add_utility_cost %>
     </div>
-    <div class="field">
-        <%= l.label :room_type %>
-        <%= l.text_area :room_type %>
+    <div class="form-group">
+        <%= l.collection_radio_buttons(:room_type, AboutRoom.room_types, :first, :first)%>
     </div>
-    <div class="field">
-        <%= l.label :furnished %>
-        <%= l.text_area :furnished %>
+    <div class="form-group">
+        <%= l.collection_radio_buttons(:furnished, AboutRoom.furnisheds, :first, :first)%>
     </div>
-    <div class="field">
+    <div class="checkbox-inlinep">
         <%= l.label :ensuite %>
         <%= l.check_box :ensuite %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= l.label :avail_from %>
-        <%= l.text_area :avail_from %>
+        <%= l.text_field :avail_from %>
     </div>
     <div class="field">
         <%= l.label :min_stay %>
-        <%= l.text_area :min_stay %>
+        <%= l.text_field :min_stay %>
     </div>
   <% end %>
-
+  <h3>Housemate</h3>
   <%= f.fields_for :housemate do |n| %>
     <div class="field">
-        <%= n.label :numb_current_mates %>
-        <%= n.text_area :numb_current_mates %>
+      <% 1.upto(10) do |i| %>
+        <%= n.label :numb_current_mates, i %>
+        <%= n.radio_button :numb_current_mates, i %>&nbsp;&nbsp;
+      <% end %>
     </div>
     <div class="field">
-        <%= n.label :pref_gender %>
-        <%= n.text_area :pref_gender %>
+        <%= n.collection_radio_buttons(:pref_gender, Housemate.pref_genders, :first, :first)%>
     </div>
     <div class="field">
-        <%= n.label :pref_occupation %>
-        <%= n.text_area :pref_occupation %>
+        <%= n.collection_radio_buttons(:pref_occupation, Housemate.pref_occupations, :first, :first)%>
     </div>
     <div class="field">
         <%= n.label :pref_age_min %>
-        <%= n.text_area :pref_age_min %>
+        <%= n.text_field :pref_age_min %>
     </div>
     <div class="field">
         <%= n.label :pref_age_max %>
-        <%= n.text_area :pref_age_max %>
+        <%= n.text_field :pref_age_max %>
     </div>
+  <% end %>
+
+  <%= f.fields_for :room_images do |j| %>
+   <% if j.object.new_record? %>
+      <p>
+        <%= j.label :caption, "Image Caption" %>
+        <%= j.text_field :caption %>
+      </p>
+       
+      <p>
+        <%= j.label :photo, "Image File" %>
+        <%= j.file_field :photo %>
+      </p>
+   <% end %>
   <% end %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+</div>
+</div>

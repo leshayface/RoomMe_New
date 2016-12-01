@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :images
+  resources :about_yous
   resources :housemates
   resources :about_rooms
   resources :about_properties

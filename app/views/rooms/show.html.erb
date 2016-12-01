@@ -15,9 +15,20 @@
   <%= @room.location.city %>
 </p>
 
+<p>
+  <strong>Location:</strong>
+  <%= @room.room_images %>
+</p>
+
 <strong>House Rules:</strong>
   <% @room.house_rules.each do |n| %>
     <br /><%= n.name %>
+  <% end %>
+</p>
+
+<strong>Room Amenities:</strong>
+  <% @room.room_amenities.each do |x| %>
+    <br /><%= x.name %>
   <% end %>
 </p>
 
@@ -111,7 +122,6 @@
   <strong>pref age max</strong>
   <%= @room.housemate.pref_age_max %>
 </p>
-
 <p>
   <strong>Submitted by:</strong>
   <%= @room.user.email %>
