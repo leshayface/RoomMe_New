@@ -15,12 +15,17 @@
   <%= @room.location.city %>
 </p>
 
-
 <strong>House Rules:</strong>
   <% @room.house_rules.each do |n| %>
     <br /><%= n.name %>
   <% end %>
 </p>
+
+<% @room.room_images.each do |r| %>
+    <div class="main-page-blocks">
+      <%= image_tag r.photo.url(:med) %>
+    </div>
+<% end %>
 
 <strong>Room Amenities:</strong>
   <% @room.room_amenities.each do |x| %>
