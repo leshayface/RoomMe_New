@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-	has_many :rooms
+	has_many :rooms, :dependent => :destroy
 
 	enum poster_type: [:flatmate, :landlord, :agent]
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
