@@ -52,5 +52,17 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+#paperclip S3 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_region: ENV["Oregon"],
+    s3_credentials: {
+      s3_host_name: ENV["RoomMe"],
+      bucket: ENV["roommeimages"],
+      access_key_id: ENV["AKIAIYJXKTG5NTAW4LVA"],
+      secret_access_key: ENV["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"]
+    }
+  } 
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
