@@ -26,8 +26,20 @@
 
   <%= f.fields_for :location do |d| %>
     <div class="form-group">
+        <%= d.label :suburb %>
+        <%= d.text_field :suburb, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
         <%= d.label :city %>
         <%= d.text_field :city, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= d.label :province %>
+        <%= d.text_field :province, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= d.label :country %>
+        <%= d.text_field :country, :class => 'form-control' %>
     </div>
   <% end %>
   <h3>House Rules</h3>
@@ -111,7 +123,7 @@
     <div class="form-group">
         <%= l.collection_radio_buttons(:furnished, AboutRoom.furnisheds, :first, :first)%>
     </div>
-    <div class="checkbox-inlinep">
+    <div class="checkbox-inline">
         <%= l.label :ensuite %>
         <%= l.check_box :ensuite %>
     </div>
