@@ -55,12 +55,12 @@ Rails.application.configure do
 #paperclip S3 
   config.paperclip_defaults = {
     storage: :s3,
-    s3_region: ENV["us-west-2"],
+    s3_region: "us-west-2",
     s3_credentials: {
-      s3_host_name: ENV["US West (Oregon)"],
-      bucket: ENV["roommeimages"],
-      access_key_id: ENV["AKIAIYJXKTG5NTAW4LVA"],
-      secret_access_key: ENV["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"]
+      s3_host_name: "Z3BJ6K6RIION7M",
+      bucket: "roommeimages",
+      access_key_id: "AKIAIYJXKTG5NTAW4LVA",
+      secret_access_key: "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"
     }
   } 
 
