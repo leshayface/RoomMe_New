@@ -57,7 +57,7 @@ Rails.application.configure do
     storage: :s3,
     s3_region: "us-west-2",
     s3_credentials: {
-      s3_host_name: "Z3BJ6K6RIION7M",
+      s3_host_name: "s3-us-west-2.amazonaws.com",
       bucket: "roommeimages",
       access_key_id: "AKIAIYJXKTG5NTAW4LVA",
       secret_access_key: "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"
