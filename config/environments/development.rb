@@ -55,9 +55,9 @@ Rails.application.configure do
 #paperclip S3 
   config.paperclip_defaults = {
     storage: :s3,
-    s3_region: ENV["Oregon"],
+    s3_region: ENV["us-west-2"],
     s3_credentials: {
-      s3_host_name: ENV["RoomMe"],
+      s3_host_name: ENV["US West (Oregon)"],
       bucket: ENV["roommeimages"],
       access_key_id: ENV["AKIAIYJXKTG5NTAW4LVA"],
       secret_access_key: ENV["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"]
