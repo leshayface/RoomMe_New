@@ -1,5 +1,5 @@
 class RoomImage < ApplicationRecord
-	belongs_to :room, validate: false
+	belongs_to :room, validate: false, :dependent => :destroy
 	has_attached_file :photo, :styles => { small: "100x100", med: "250x250", large: "500x500" }
 	validates_attachment_presence :photo
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
