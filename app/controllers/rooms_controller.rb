@@ -21,6 +21,7 @@ class RoomsController < ApplicationController
     @room.build_housemate
     @room.house_rules.build
     @room.room_amenities.build
+    @room.build_user
     3.times {@room.room_images.build}
   end
 
@@ -78,6 +79,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:title, :description, location_attributes: [ :id, :suburb, :city, :province, :country ], house_rule_ids: [], room_amenity_ids: [], about_property_attributes: [:id, :property_type, :numb_rooms, :numb_bathrooms, :rooms_avail ], about_room_attributes: [:id, :monthly_rent, :add_utility_cost, :room_type, :furnished, :ensuite, :avail_from, :min_stay ], housemate_attributes: [:id, :numb_current_mates, :pref_gender, :pref_occupation, :pref_age_min, :pref_age_max], room_images_attributes: [:id, :caption, :photo] )
+      params.require(:room).permit(:title, :description, location_attributes: [ :id, :suburb, :city, :province, :country ], house_rule_ids: [], room_amenity_ids: [], about_property_attributes: [:id, :property_type, :numb_rooms, :numb_bathrooms, :rooms_avail ], about_room_attributes: [:id, :monthly_rent, :add_utility_cost, :room_type, :furnished, :ensuite, :avail_from, :min_stay ], housemate_attributes: [:id, :numb_current_mates, :pref_gender, :pref_occupation, :pref_age_min, :pref_age_max], room_images_attributes: [:id, :caption, :photo], users_attributes: [:name, :email, :phone, :poster_type, :password, :password_confirmation] )
     end
 end

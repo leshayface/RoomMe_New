@@ -8,5 +8,5 @@ class Room < ApplicationRecord
 	has_and_belongs_to_many :room_amenities, :dependent => :destroy
 	has_many :room_images, validate: false, :dependent => :destroy
 
-	accepts_nested_attributes_for :location, :about_property, :about_room, :housemate, :house_rules, :room_amenities, :room_images, allow_destroy: true
+	accepts_nested_attributes_for :location, :about_property, :about_room, :housemate, :house_rules, :room_amenities, :room_images, :user, allow_destroy: true
 end
