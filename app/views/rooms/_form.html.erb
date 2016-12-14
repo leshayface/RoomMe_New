@@ -179,19 +179,14 @@
     </div>
 <% end %>
 
-  <%= f.fields_for :room_images do |j| %>
-   <% if j.object.new_record? %>
-      <p>
-        <%= j.label :caption, "Image Caption" %>
-        <%= j.text_field :caption %>
-      </p>
-       
-      <p>
-        <%= j.label :photo, "Image File" %>
-        <%= j.file_field :photo %>
-      </p>
-   <% end %>
+
+  <%= f.file_field :photos, multiple: true %>
+
+  <%= f.fields_for :photos do |j| %>
+      <%= j.label :photo, "Image File" %>
+
   <% end %>
+
 
   <div class="actions">
     <%= f.submit %>

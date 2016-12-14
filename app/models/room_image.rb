@@ -4,4 +4,10 @@ class RoomImage < ApplicationRecord
 	validates_attachment_presence :photo
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 	validates_attachment_size :photo, :less_than => 5.megabytes
+
+  attr_reader :photos
+
+  def photos=(files = [])
+    files.each{|f| (@photos ||= []) << room_images.create(photo: f) }
+  end
 end
