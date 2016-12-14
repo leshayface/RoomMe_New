@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   resources :rooms
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-   get '/rooms' => "welcome#index", as: :user_root
+  get '/rooms' => "welcome#index", as: :user_root
   
-  
+  devise_for :users, controllers: {registrations: 'registrations'}
+
   root to: "home#index"
 end

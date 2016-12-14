@@ -23,7 +23,7 @@
 # RoomAmenity.create( name: 'Security' )
 # RoomAmenity.create( name: 'Elevator' )
 
-HouseRule.create( name: 'Families & children accepted' )
-HouseRule.create( name: 'Couples accepted' )
-HouseRule.create( name: 'Pets allowed' )
-HouseRule.create( name: 'Smoking inside the property allowed' )
+# HouseRule.create( name: 'Families & children accepted' )
+# HouseRule.create( name: 'Couples accepted' )
+# HouseRule.create( name: 'Pets allowed' )
+# HouseRule.create( name: 'Smoking inside the property allowed' )

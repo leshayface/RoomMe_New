@@ -57,7 +57,7 @@
     <% RoomAmenity.all.each do |room_amenity| %>
       <div class="checkbox-inline radio">
         <%= check_box_tag "room[room_amenity_ids][]", room_amenity.id %>
-        <div class="check"> <%= room_amenity.name %><br /></div>
+        <label class="check"> <%= room_amenity.name %><br /></label>
       </div>
     <% end %>
   </div>
