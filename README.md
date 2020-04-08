@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an incomplete project that a friend and myself worked on in 2016.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The purpose of this project would've been to allow users to sign up and upload bedrooms or hotel rooms that they have for rent and have it displayed and filtered with advance search. A signed up user would have a dashboard to manage their listings. Users seeking a room can then filter through these rooms and book one by filling their details in a form and selecting from available dates in calendar.
